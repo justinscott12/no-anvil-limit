@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.noanvillimit.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "refmap": "unlimited-anvil.refmap.json",
+    "mixins": [
+      "AnvilScreenHandlerMixin"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

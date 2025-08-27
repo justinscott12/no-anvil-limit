@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "id": "no-anvil-limit",
+    "version": "1.21.8",
+    "name": "No Anvil Limit",
+    "description": "Removes the anvil level 40 limit, allowing unlimited enchantment combinations and repairs.",
+    "authors": [
+        "Justin Scott"
+    ],
+    "contact": {
+        "homepage": "https://github.com/justinscott12",
+        "sources": "https://github.com/justinscott12/no-anvil-limit"
+    },
+    "license": "MIT",
+    "icon": "assets/no-anvil-limit/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+          "com.noanvillimit.NoAnvilLimitMod"
+        ]
+    },
+    "mixins": [
+        "no-anvil-limit.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "fabric-api": "*",
+        "minecraft": "${minecraft_version}"
+    }
+}
