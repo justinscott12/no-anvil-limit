@@ -27,6 +27,10 @@ loom {
             sourceSet sourceSets.client
         }
     }
+
+    mixin {
+        defaultRefmapName = "unlimited-anvil.refmap.json"
+    }
 }
 
 dependencies {

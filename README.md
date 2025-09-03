@@ -9,6 +9,8 @@ A Minecraft Fabric mod that removes the anvil level 40 limit, allowing unlimited
 - Works with both single-player and multiplayer
 - Compatible with Minecraft 1.21.8
 
+![example.png](src/main/resources/assets/no-anvil-limit/example.png)
+
 ## Download
 - If you just want the mod itself and you don't care about the source code, just download the jar file for the corresponding Minecraft version from the releases folder
 
