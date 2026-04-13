@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "id": "no-anvil-limit",
-    "version": "1.21.8",
+    "version": "${version}",
     "name": "No Anvil Limit",
     "description": "Removes the anvil level 40 limit, allowing unlimited enchantment combinations and repairs.",
     "authors": [
