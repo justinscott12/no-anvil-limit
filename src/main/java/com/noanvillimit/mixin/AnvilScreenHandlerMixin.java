@@ -1,25 +1,25 @@
 package com.noanvillimit.mixin;
 
-import net.minecraft.screen.AnvilScreenHandler;
+import net.minecraft.world.inventory.AnvilMenu;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(AnvilScreenHandler.class)
+@Mixin(AnvilMenu.class)
 public class AnvilScreenHandlerMixin {
 
     /**
-     * Remove the level 40 limit by intercepting the canTakeOutput method
-     * and allowing operations regardless of player level
+     * Remove the anvil "Too Expensive!" level limit by intercepting the output
+     * slot's mayPickup check (yarn: canTakeOutput) and always allowing the
+     * player to take the result when one exists.
      */
-    @Inject(method = "canTakeOutput", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "mayPickup", at = @At("HEAD"), cancellable = true)
     private void removeAnvilLevelLimit(CallbackInfoReturnable<Boolean> cir) {
-        AnvilScreenHandler handler = (AnvilScreenHandler) (Object) this;
+        AnvilMenu handler = (AnvilMenu) (Object) this;
 
-        // Check if there's a valid result in the output slot
-        if (!handler.getSlot(2).getStack().isEmpty()) {
-            // Always allow taking the output, regardless of player level
+        // Slot 2 is the anvil output slot. If it holds a result, allow taking it.
+        if (!handler.getSlot(2).getItem().isEmpty()) {
             cir.setReturnValue(true);
         }
     }
